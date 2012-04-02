@@ -1,6 +1,6 @@
-# Humanize::Bytes
+# Humanize::Bytes [![Build Status](https://secure.travis-ci.org/plribeiro3000/humanize-bytes.png)](http://travis-ci.org/plribeiro3000/humanize-bytes)
 
-TODO: Write a gem description
+Convert Byte, Kbyte, MByte, Gbyte into each other easy as to_b.
 
 ## Installation
 
@@ -18,7 +18,16 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Initialize the New Object with
+ Humanize::Bytes.initialize(1024)
+
+The initialization process accept a second argument which is the unit. Available units are: b, k, m, g
+
+Then call on of the methods: to_b, to_k, to_m, to_g.
+
+## Note
+
+The available methods are different depending on the initialization.
 
 ## Contributing
 
