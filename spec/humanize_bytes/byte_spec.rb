@@ -9,6 +9,12 @@ describe Humanize::Bytes::Byte do
     end
   end
 
+  context "#to_b" do
+    it "should return the value" do
+      b.to_b.should == 2147843648
+    end
+  end
+
   context "#to_k" do
     it "should convert the value to kilo bytes" do
       b.to_k.should == 2097503.5625

@@ -21,6 +21,12 @@ describe Humanize::Bytes::Mega do
     end
   end
 
+  context "#to_m" do
+    it "should return the value" do
+      m.to_m.should == 4.8828125
+    end
+  end
+
   context "#to_g" do
     it "should convert the value to giga bytes" do
       Humanize::Bytes::Mega.new(1000).to_g.should == 0.9765625

@@ -21,6 +21,10 @@ module Humanize
         @value * 1024
       end
 
+      def to_g
+        @value
+      end
+
       def to_s
         @value.instance_of?(Float) ? formatted_float + ' giga bytes' : @value.to_s + ' giga bytes'
       end

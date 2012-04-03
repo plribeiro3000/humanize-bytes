@@ -15,6 +15,12 @@ describe Humanize::Bytes::Kilo do
     end
   end
 
+  context "#to_k" do
+    it "should return the value" do
+      k.to_k.should == 5000
+    end
+  end
+
   context "#to_m" do
     it "should convert the value to mega bytes" do
       k.to_m.should == 4.8828125

@@ -13,6 +13,10 @@ module Humanize
         @value * 1024
       end
 
+      def to_k
+        @value
+      end
+
       def to_m
         @value / 1024.0
       end

@@ -27,6 +27,12 @@ describe Humanize::Bytes::Giga do
     end
   end
 
+  context "#to_g" do
+    it "should return the value" do
+      g.to_g.should == 3.25
+    end
+  end
+
   context "#to_s" do
     context "when value is a decimal" do
       it "should print a humanized version of the value" do

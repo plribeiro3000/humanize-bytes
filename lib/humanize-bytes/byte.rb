@@ -9,6 +9,10 @@ module Humanize
         @value
       end
 
+      def to_b
+        value
+      end
+
       def to_k
         @value / 1024.0
       end
