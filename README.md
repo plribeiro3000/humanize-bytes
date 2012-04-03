@@ -19,15 +19,12 @@ Or install it yourself as:
 ## Usage
 
 Initialize the New Object with
- Humanize::Bytes.initialize(1024)
+
+    Humanize::Bytes.initialize(1024)
 
 The initialization process accept a second argument which is the unit. Available units are: b, k, m, g
 
-Then call on of the methods: to_b, to_k, to_m, to_g.
-
-## Note
-
-The available methods are different depending on the initialization.
+Then call one of the methods: to_b, to_k, to_m, to_g.
 
 ## Contributing
 
