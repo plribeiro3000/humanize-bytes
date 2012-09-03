@@ -10,19 +10,19 @@ module Humanize
       end
 
       def to_b
-        @value * 1024 * 1024
+        Byte.new @value * 1024 * 1024
       end
 
       def to_k
-        @value * 1024
+        Kilo.new @value * 1024
       end
 
       def to_m
-        @value
+        self
       end
 
       def to_g
-        @value / 1024.0
+        Giga.new @value / 1024.0
       end
 
       def to_s

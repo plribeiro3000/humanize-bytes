@@ -10,26 +10,35 @@ describe Humanize::Bytes::Giga do
   end
 
   context "#to_b" do
-    it "should convert the value to bytes" do
-      g.to_b.should == 3489660928
+    it "should convert to Bytes" do
+      g.to_b.class.should be Byte
+    end 
+    it "should convert the value to Byte" do
+      g.to_b.value.should == 3489660928
     end
   end
 
   context "#to_k" do
-    it "should convert the value to kilo bytes" do
-      g.to_k.should == 3407872
+    it "should convert to Kilo bytes" do
+      g.to_k.class.should be Kilo
+    end 
+    it "should convert the value to Kilo bytes" do
+      g.to_k.value.should == 3407872
     end
   end
 
   context "#to_m" do
-    it "should convert the value to mega bytes" do
-      g.to_m.should == 3328
+    it "should convert to Mega bytes" do
+      g.to_m.class.should be Mega
+    end
+    it "should convert the value to Mega bytes" do
+      g.to_m.value.should == 3328
     end
   end
 
   context "#to_g" do
-    it "should return the value" do
-      g.to_g.should == 3.25
+    it "should return self" do
+      g.to_g.should be g
     end
   end
 
