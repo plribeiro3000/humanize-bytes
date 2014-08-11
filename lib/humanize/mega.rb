@@ -24,14 +24,9 @@ module Humanize
       Giga.new @value / 1024.0
     end
 
-    def to_s
-      @value.instance_of?(Float) ? formatted_float + ' mega bytes' : @value.to_s + ' mega bytes'
-    end
-
-    protected
-
-    def formatted_float
-      @value.to_s[0 .. @value.to_s.index('.') + 2]
+    def to_s(options = {})
+      size = options.fetch(:decimal_digits, value.to_s.size)
+      ("%.#{size}f" % value).to_f
     end
   end
 end
