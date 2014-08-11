@@ -45,7 +45,7 @@ describe Humanize::Kilo do
   context "#to_s" do
     context 'without any specification' do
       it "should return a float with all digits" do
-        expect(k.to_s).to eq(5000.0)
+        expect(k.to_s).to eq('5000')
       end
     end
 
@@ -55,7 +55,7 @@ describe Humanize::Kilo do
       end
 
       it "should return a float with specified digits" do
-        expect(@k.to_s(:decimal_digits => 1)).to eq(2147843648.2)
+        expect(@k.to_s(:decimal_digits => 1)).to eq('2147843648.2')
       end
     end
   end

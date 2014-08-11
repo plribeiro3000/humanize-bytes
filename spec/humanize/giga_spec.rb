@@ -45,7 +45,7 @@ describe Humanize::Giga do
   context "#to_s" do
     context 'without any specification' do
       it "should return a float with all digits" do
-        expect(g.to_s).to eq(3.25)
+        expect(g.to_s).to eq('3.25')
       end
     end
 
@@ -55,7 +55,7 @@ describe Humanize::Giga do
       end
 
       it "should return a float with specified digits" do
-        expect(@g.to_s(:decimal_digits => 1)).to eq(3.2)
+        expect(@g.to_s(:decimal_digits => 1)).to eq('3.2')
       end
     end
   end

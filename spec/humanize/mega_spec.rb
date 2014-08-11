@@ -45,13 +45,13 @@ describe Humanize::Mega do
   context "#to_s" do
     context 'without any specification' do
       it "should return a float with all digits" do
-        expect(m.to_s).to eq(4.8828125)
+        expect(m.to_s).to eq('4.8828125')
       end
     end
 
     context 'with decimal_digits specified' do
       it "should return a float with specified digits" do
-        expect(m.to_s(:decimal_digits => 1)).to eq(4.9)
+        expect(m.to_s(:decimal_digits => 1)).to eq('4.9')
       end
     end
   end

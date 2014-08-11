@@ -25,8 +25,9 @@ module Humanize
     end
 
     def to_s(options = {})
-      size = options.fetch(:decimal_digits, value.to_s.size)
-      ("%.#{size}f" % value).to_f
+      size = options.fetch(:decimal_digits, nil)
+      size ||= value.to_s.split('.').size == 1 ? 0 : value.to_s.split('.').last.size
+      ("%.#{size}f" % value).to_s
     end
   end
 end

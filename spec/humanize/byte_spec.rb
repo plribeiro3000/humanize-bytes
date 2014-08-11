@@ -45,7 +45,7 @@ describe Humanize::Byte do
   context "#to_s" do
     context 'without any specification' do
       it "should return a float with all digits" do
-        expect(b.to_s).to eq(2147843648.0)
+        expect(b.to_s).to eq('2147843648')
       end
     end
 
@@ -55,7 +55,7 @@ describe Humanize::Byte do
       end
 
       it "should return a float with specified digits" do
-        expect(@b.to_s(:decimal_digits => 2)).to eq(2147843648.23)
+        expect(@b.to_s(:decimal_digits => 2)).to eq('2147843648.23')
       end
     end
   end
