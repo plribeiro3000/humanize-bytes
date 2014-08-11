@@ -18,11 +18,11 @@ Or install it yourself as:
 
 ## Usage
 
-Initialize the New Object with
+Initialize a New Byte Object with
 
-    Humanize::Bytes.initialize(1024)
-
-The initialization process accept a second argument which is the unit. Available units are: b, k, m, g
+```ruby
+Humanize::Byte.new(1024)
+```
 
 Then call one of the methods: to_b, to_k, to_m, to_g.
 

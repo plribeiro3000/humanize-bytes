@@ -1,7 +1,7 @@
 require 'spec_helper'
 
-describe Humanize::Bytes::Byte do
-  let(:b) { Humanize::Bytes::Byte.new(2147843648) }
+describe Humanize::Byte do
+  let(:b) { Humanize::Byte.new(2147843648) }
 
   context "#value" do
     it "should return the value" do
@@ -17,7 +17,7 @@ describe Humanize::Bytes::Byte do
 
   context "#to_k" do
     it "should convert to Kilo bytes" do
-      b.to_k.class.should be Kilo
+      b.to_k.should be_an_instance_of(Humanize::Kilo)
     end
     it "should convert the value to Kilo bytes" do
       b.to_k.value.should == 2097503.5625
@@ -26,7 +26,7 @@ describe Humanize::Bytes::Byte do
 
   context "#to_m" do
     it "should convert to Mega bytes" do
-      b.to_m.class.should be Mega
+      b.to_m.should be_an_instance_of(Humanize::Mega)
     end
     it "should convert the value to Mega bytes" do
       b.to_m.value.should ==  2048.3433227539062
@@ -35,7 +35,7 @@ describe Humanize::Bytes::Byte do
 
   context "#to_g" do
     it "should convert to Giga bytes" do
-      b.to_g.class.should be Giga
+      b.to_g.should be_an_instance_of(Humanize::Giga)
     end 
     it "should convert the value to Giga bytes" do
       b.to_g.value.should == 2.0003352761268616
@@ -51,7 +51,7 @@ describe Humanize::Bytes::Byte do
 
     context "when value is an integer" do
       it "should print a humanized version of the value" do
-        Humanize::Bytes::Byte.new(4.997).to_s.should == '4.99 bytes'
+        Humanize::Byte.new(4.997).to_s.should == '4.99 bytes'
       end
     end
   end

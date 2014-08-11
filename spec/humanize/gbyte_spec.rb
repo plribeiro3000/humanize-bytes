@@ -1,7 +1,7 @@
 require 'spec_helper'
 
-describe Humanize::Bytes::Giga do
-  let(:g) { Humanize::Bytes::Giga.new(3.25) }
+describe Humanize::Giga do
+  let(:g) { Humanize::Giga.new(3.25) }
 
   context "#value" do
     it "should return the value" do
@@ -11,7 +11,7 @@ describe Humanize::Bytes::Giga do
 
   context "#to_b" do
     it "should convert to Bytes" do
-      g.to_b.class.should be Byte
+      g.to_b.should be_an_instance_of(Humanize::Byte)
     end 
     it "should convert the value to Byte" do
       g.to_b.value.should == 3489660928
@@ -20,7 +20,7 @@ describe Humanize::Bytes::Giga do
 
   context "#to_k" do
     it "should convert to Kilo bytes" do
-      g.to_k.class.should be Kilo
+      g.to_k.should be_an_instance_of(Humanize::Kilo)
     end 
     it "should convert the value to Kilo bytes" do
       g.to_k.value.should == 3407872
@@ -29,7 +29,7 @@ describe Humanize::Bytes::Giga do
 
   context "#to_m" do
     it "should convert to Mega bytes" do
-      g.to_m.class.should be Mega
+      g.to_m.should be_an_instance_of(Humanize::Mega)
     end
     it "should convert the value to Mega bytes" do
       g.to_m.value.should == 3328
@@ -51,7 +51,7 @@ describe Humanize::Bytes::Giga do
 
     context "when value is an integer" do
       it "should print a humanized version of the value" do
-        Humanize::Bytes::Giga.new(4).to_s.should == '4 giga bytes'
+        Humanize::Giga.new(4).to_s.should == '4 giga bytes'
       end
     end
   end
