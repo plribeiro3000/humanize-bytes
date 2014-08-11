@@ -50,8 +50,12 @@ describe Humanize::Giga do
     end
 
     context 'with decimal_digits specified' do
+      before :each do
+        @g = Humanize::Giga.new 3.22
+      end
+
       it "should return a float with specified digits" do
-        expect(g.to_s(:decimal_digits => 1)).to eq(3.2)
+        expect(@g.to_s(:decimal_digits => 1)).to eq(3.2)
       end
     end
   end
