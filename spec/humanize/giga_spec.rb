@@ -3,6 +3,12 @@ require 'spec_helper'
 describe Humanize::Giga do
   let(:g) { Humanize::Giga.new(3.25) }
 
+  context "initialize" do
+    it "should convert the number to float" do
+      expect(Humanize::Giga.new('3').value).to be_an_instance_of(Float)
+    end
+  end
+
   context "#value" do
     it "should return the value" do
       expect(g.value).to eq(3.25)

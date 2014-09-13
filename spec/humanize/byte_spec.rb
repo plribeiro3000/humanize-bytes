@@ -3,6 +3,12 @@ require 'spec_helper'
 describe Humanize::Byte do
   let(:b) { Humanize::Byte.new(2147843648) }
 
+  context "initialize" do
+    it "should convert the number to float" do
+      expect(Humanize::Byte.new('3').value).to be_an_instance_of(Float)
+    end
+  end
+
   context "#value" do
     it "should return the value" do
       expect(b.value).to eq(2147843648)

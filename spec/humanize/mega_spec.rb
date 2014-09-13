@@ -3,6 +3,12 @@ require 'spec_helper'
 describe Humanize::Mega do
   let(:m) { Humanize::Mega.new(4.8828125) }
 
+  context "initialize" do
+    it "should convert the number to float" do
+      expect(Humanize::Mega.new('3').value).to be_an_instance_of(Float)
+    end
+  end
+
   context "#value" do
     it "should return the value" do
       expect(m.value).to eq(4.8828125)

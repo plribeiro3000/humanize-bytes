@@ -3,6 +3,12 @@ require 'spec_helper'
 describe Humanize::Kilo do
   let(:k) { Humanize::Kilo.new(5000) }
 
+  context "initialize" do
+    it "should convert the number to float" do
+      expect(Humanize::Kilo.new('3').value).to be_an_instance_of(Float)
+    end
+  end
+
   context "#value" do
     it "should return the value" do
       expect(k.value).to eq(5000)
