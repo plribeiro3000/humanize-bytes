@@ -48,6 +48,56 @@ describe Humanize::Kilo do
     end
   end
 
+  context "#to_t" do
+    it "should convert to Tera bytes" do
+      expect(k.to_t).to be_an_instance_of(Humanize::Tera)
+    end
+
+    it "should convert the value to Tera bytes" do
+      expect(k.to_t.value).to eq(0.000004656612873077393)
+    end
+  end
+
+  context "#to_p" do
+    it "should convert to Peta bytes" do
+      expect(k.to_p).to be_an_instance_of(Humanize::Peta)
+    end
+
+    it "should convert the value to Peta bytes" do
+      expect(k.to_p.value).to eq(0.000000004547473508864641)
+    end
+  end
+
+  context "#to_e" do
+    it "should convert to Exa bytes" do
+      expect(k.to_e).to be_an_instance_of(Humanize::Exa)
+    end
+
+    it "should convert the value to Exa bytes" do
+      expect(k.to_e.value).to eq(0.000000000004440892098500626)
+    end
+  end
+
+  context "#to_z" do
+    it "should convert to Zetta bytes" do
+      expect(k.to_z).to be_an_instance_of(Humanize::Zetta)
+    end
+
+    it "should convert the value to Zetta bytes" do
+      expect(k.to_z.value).to eq(0.000000000000004336808689942018)
+    end
+  end
+
+  context "#to_y" do
+    it "should convert to Yotta bytes" do
+      expect(k.to_y).to be_an_instance_of(Humanize::Yotta)
+    end
+
+    it "should convert the value to Yotta bytes" do
+      expect(k.to_y.value).to eq(4.235164736271502e-18)
+    end
+  end
+
   context "#to_s" do
     context 'without any specification' do
       it "should return a float with all digits" do

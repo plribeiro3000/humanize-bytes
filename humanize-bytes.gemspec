@@ -8,7 +8,7 @@ Gem::Specification.new do |gem|
   gem.version     = Humanize::Bytes::VERSION
   gem.authors     = %q{Paulo Henrique Lopes Ribeiro}
   gem.email       = %q{plribeiro3000@gmail.com}
-  gem.summary     = %q{Convert Byte, Kbyte, MByte, Gbyte into each other}
+  gem.summary     = %q{Convert Byte, KByte, MByte, GByte, TByte, PByte, EByte, ZByte and YByte into each other}
 
   gem.files         = `git ls-files`.split($\)
   gem.test_files    = `git ls-files -- {test,spec,features,examples,gemfiles}/*`.split("\n")
