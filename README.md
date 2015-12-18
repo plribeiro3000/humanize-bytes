@@ -1,6 +1,6 @@
 # Humanize::Bytes [![Build Status](https://secure.travis-ci.org/plribeiro3000/humanize-bytes.png)](http://travis-ci.org/plribeiro3000/humanize-bytes)
 
-Convert Byte, Kbyte, MByte, Gbyte into each other easy as to_b.
+Convert Byte, KByte, MByte, GByte, TByte, PByte, EByte, ZByte and YByte into each other easy as to_b.
 
 ## Installation
 
@@ -24,7 +24,19 @@ Initialize a New Byte Object with
 Humanize::Byte.new(1024)
 ```
 
-Then call one of the methods: to_b, to_k, to_m, to_g.
+## Conversion Table
+
+| Value | Equivalent | Call Methods |
+|-------|------------|:-----------:|
+| Byte | 1 Byte | to_b |
+| Kilobyte | 1024 Bytes | to_k |
+| Megabyte | 1024 Kilobytes | to_m |
+| Gigabyte | 1024 Megabytes | to_g |
+| Terabyte | 1024 Gigabytes | to_t |
+| Petabyte | 1024 Terabytes | to_p |
+| Exabyte | 1024 Petabytes | to_e |
+| Zettabyte | 1024 Exabytes | to_z |
+| Yottabyte | 1024 Zettabytes | to_y |
 
 ## Contributing
 
