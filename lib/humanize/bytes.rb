@@ -1,6 +1,6 @@
 module Humanize
   class Bytes
-    VERSION = '2.1.0'
+    VERSION = '2.2.0'
 
     def initialize(value)
       @value = value.to_f
