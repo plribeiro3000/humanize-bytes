@@ -1,5 +1,8 @@
 module Humanize
   class Peta < Bytes
+    def label
+      "PB"
+    end
     def to_b
       Byte.new @value * 1024 * 1024 * 1024 * 1024 * 1024
     end

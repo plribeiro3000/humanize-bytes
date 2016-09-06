@@ -1,5 +1,9 @@
 module Humanize
   class Kilo < Bytes
+    def label 
+      "KB"
+    end
+
     def to_b
       Byte.new @value * 1024
     end

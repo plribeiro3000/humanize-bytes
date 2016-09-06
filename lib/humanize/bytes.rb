@@ -1,6 +1,15 @@
 module Humanize
   class Bytes
-    VERSION = '2.2.0'
+    VERSION = '2.3.0'
+    BASE_MEASURE = 1024.0
+    KILO = BASE_MEASURE
+    MEGA = KILO * BASE_MEASURE
+    GIGA = MEGA * BASE_MEASURE
+    TERA = GIGA * BASE_MEASURE
+    PETA = TERA * BASE_MEASURE
+    EXA = PETA * BASE_MEASURE
+    ZETTA = EXA * BASE_MEASURE
+    YOTTA = ZETTA * BASE_MEASURE
 
     def initialize(value)
       @value = value.to_f
@@ -8,6 +17,10 @@ module Humanize
 
     def value
       @value
+    end
+
+    def label
+      "Bytes"
     end
 
     def to_s(options = {})

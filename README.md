@@ -21,7 +21,21 @@ Or install it yourself as:
 Initialize a New Byte Object with
 
 ```ruby
-Humanize::Byte.new(1024)
+b = Humanize::Byte.new(1024)
+# convert the Byte to a Kilobyte
+b.to_k
+# convert the Byte to a Megabyte
+b.to_m
+# and so on... See Conversion table below
+```
+
+If you want to simply get a Humanized string for a set of bytes, you can
+use `to_human_s`
+
+```ruby
+b = Humanize::Byte.new(1024)
+b.to_human_s
+# => "1.00 KB"
 ```
 
 ## Conversion Table
