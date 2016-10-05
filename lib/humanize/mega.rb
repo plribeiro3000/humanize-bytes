@@ -1,11 +1,11 @@
 module Humanize
   class Mega < Bytes
     def to_b
-      Byte.new @value * 1024 * 1024
+      Byte.new @value * MEGA
     end
 
     def to_k
-      Kilo.new @value * 1024
+      Kilo.new @value * (MEGA / KILO)
     end
 
     def to_m
@@ -13,27 +13,27 @@ module Humanize
     end
 
     def to_g
-      Giga.new @value / 1024.0
+      Giga.new @value * (MEGA / GIGA)
     end
 
     def to_t
-      Tera.new @value / 1024.0 / 1024.0
+      Tera.new @value * (MEGA / TERA)
     end
 
     def to_p
-      Peta.new @value / 1024.0 / 1024.0 / 1024.0
+      Peta.new @value * (MEGA / PETA)
     end
 
     def to_e
-      Exa.new @value / 1024.0 / 1024.0 / 1024.0 / 1024.0
+      Exa.new @value * (MEGA / EXA)
     end
 
     def to_z
-      Zetta.new @value / 1024.0 / 1024.0 / 1024.0 / 1024.0 / 1024.0
+      Zetta.new @value * (MEGA / ZETTA)
     end
 
     def to_y
-      Yotta.new @value / 1024.0 / 1024.0 / 1024.0 / 1024.0 / 1024.0 / 1024.0
+      Yotta.new @value * (MEGA / YOTTA)
     end
   end
 end

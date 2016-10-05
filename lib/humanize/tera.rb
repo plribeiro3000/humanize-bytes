@@ -1,19 +1,19 @@
 module Humanize
   class Tera < Bytes
     def to_b
-      Byte.new @value * 1024 * 1024 * 1024 * 1024
+      Byte.new @value * TERA
     end
 
     def to_k
-      Kilo.new @value * 1024 * 1024 * 1024
+      Kilo.new @value * (TERA / KILO)
     end
 
     def to_m
-      Mega.new @value * 1024 * 1024
+      Mega.new @value * (TERA / MEGA)
     end
 
     def to_g
-      Giga.new @value * 1024
+      Giga.new @value * (TERA / GIGA)
     end
 
     def to_t
@@ -21,19 +21,19 @@ module Humanize
     end
 
     def to_p
-      Peta.new @value / 1024.0
+      Peta.new @value * (TERA / PETA)
     end
 
     def to_e
-      Exa.new @value / 1024.0 / 1024.0
+      Exa.new @value * (TERA / EXA)
     end
 
     def to_z
-      Zetta.new @value / 1024.0 / 1024.0 / 1024.0
+      Zetta.new @value * (TERA / ZETTA)
     end
 
     def to_y
-      Yotta.new @value / 1024.0 / 1024.0 / 1024.0 / 1024.0
+      Yotta.new @value * (TERA / YOTTA)
     end
   end
 end
