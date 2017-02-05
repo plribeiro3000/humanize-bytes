@@ -5,31 +5,31 @@ module Humanize
     end
 
     def to_b
-      Byte.new @value * 1024 * 1024 * 1024 * 1024 * 1024 * 1024 * 1024
+      Byte.new @value * ZETTA
     end
 
     def to_k
-      Kilo.new @value * 1024 * 1024 * 1024 * 1024 * 1024 * 1024
+      Kilo.new @value * (ZETTA / KILO)
     end
 
     def to_m
-      Mega.new @value * 1024 * 1024 * 1024 * 1024 * 1024
+      Mega.new @value * (ZETTA / MEGA)
     end
 
     def to_g
-      Giga.new @value * 1024 * 1024 * 1024 * 1024
+      Giga.new @value * (ZETTA / GIGA)
     end
 
     def to_t
-      Tera.new @value * 1024 * 1024 * 1024
+      Tera.new @value * (ZETTA / TERA)
     end
 
     def to_p
-      Peta.new @value * 1024 * 1024
+      Peta.new @value * (ZETTA / PETA)
     end
 
     def to_e
-      Exa.new @value * 1024
+      Exa.new @value * (ZETTA / EXA)
     end
 
     def to_z
@@ -37,7 +37,7 @@ module Humanize
     end
 
     def to_y
-      Yotta.new @value / 1024.0
+      Yotta.new @value * (ZETTA / YOTTA)
     end
   end
 end

@@ -15,38 +15,16 @@ module Humanize
       @value = value.to_f
     end
 
+    def label
+      @value == 1 ? "Byte" : "Bytes"
+    end
+
     def value
       @value
     end
 
-    def label
-      "Bytes"
-    end
-    
-    def to_human_s
-      h = to_human
-      h.to_s(:decimal_digits => 2) + " #{h.label}"
-    end
-
-    def to_human
-      if @value >= YOTTA
-        return to_y
-      elsif @value >= ZETTA
-        return to_z
-      elsif @value >= EXA
-        return to_e
-      elsif @value >= PETA
-        return to_p
-      elsif @value >= TERA
-        return to_t
-      elsif @value >= GIGA
-        return to_g
-      elsif @value >= MEGA
-        return to_m
-      elsif @value >= KILO
-        return to_k
-      end
-      return self
+    def human
+      Humanize::HumanBytes.new(self)
     end
 
     def to_s(options = {})
