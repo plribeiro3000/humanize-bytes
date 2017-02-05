@@ -1,5 +1,9 @@
 module Humanize
   class Zetta < Bytes
+    def label
+      "ZB"
+    end
+
     def to_b
       Byte.new @value * ZETTA
     end

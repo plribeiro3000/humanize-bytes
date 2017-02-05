@@ -3,6 +3,10 @@ module Humanize
     def to_b
       self
     end
+    
+    def label
+      @value == 1 ? "Byte" : "Bytes"
+    end
 
     def to_k
       Kilo.new @value / KILO

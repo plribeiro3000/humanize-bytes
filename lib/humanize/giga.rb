@@ -1,5 +1,9 @@
 module Humanize
   class Giga < Bytes
+    def label
+      "GB"
+    end
+    
     def to_b
       Byte.new @value * GIGA
     end

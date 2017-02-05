@@ -15,8 +15,16 @@ module Humanize
       @value = value.to_f
     end
 
+    def label
+      @value == 1 ? "Byte" : "Bytes"
+    end
+
     def value
       @value
+    end
+
+    def human
+      Humanize::HumanBytes.new(self)
     end
 
     def to_s(options = {})

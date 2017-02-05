@@ -1,5 +1,9 @@
 module Humanize
   class Exa < Bytes
+    def label
+      "EB"
+    end
+
     def to_b
       Byte.new @value * EXA
     end

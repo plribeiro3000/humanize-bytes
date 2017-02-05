@@ -1,5 +1,9 @@
 module Humanize
   class Mega < Bytes
+    def label
+      "MB"
+    end
+
     def to_b
       Byte.new @value * MEGA
     end

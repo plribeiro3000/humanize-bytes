@@ -1,5 +1,9 @@
 module Humanize
   class Yotta < Bytes
+    def label
+      "YB"
+    end
+
     def to_b
       Byte.new @value * YOTTA
     end
