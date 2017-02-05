@@ -3,37 +3,42 @@ module Humanize
     def to_b
       self
     end
+    
+    def label
+      @value == 1 ? "Byte" : "Bytes"
+    end
+
 
     def to_k
-      Kilo.new @value / 1024.0
+      Kilo.new @value / KILO
     end
 
     def to_m
-      Mega.new @value / 1024.0 / 1024
+      Mega.new @value / MEGA
     end
 
     def to_g
-      Giga.new @value / 1024.0 / 1024 / 1024
+      Giga.new @value / GIGA
     end
 
     def to_t
-      Tera.new @value / 1024.0 / 1024.0 / 1024.0 / 1024.0
+      Tera.new @value / TERA
     end
 
     def to_p
-      Peta.new @value / 1024.0 / 1024.0 / 1024.0 / 1024.0 / 1024.0
+      Peta.new @value / PETA
     end
 
     def to_e
-      Exa.new @value / 1024.0 / 1024.0 / 1024.0 / 1024.0 / 1024.0 / 1024.0
+      Exa.new @value / EXA
     end
 
     def to_z
-      Zetta.new @value / 1024.0 / 1024.0 / 1024.0 / 1024.0 / 1024.0 / 1024.0 / 1024.0
+      Zetta.new @value / ZETTA
     end
 
     def to_y
-      Yotta.new @value / 1024.0 / 1024.0 / 1024.0 / 1024.0 / 1024.0 / 1024.0 / 1024.0 / 1024.0
+      Yotta.new @value / YOTTA
     end
   end
 end

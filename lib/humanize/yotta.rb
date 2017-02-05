@@ -1,35 +1,38 @@
 module Humanize
   class Yotta < Bytes
+    def label
+      "YB"
+    end
     def to_b
-      Byte.new @value * 1024 * 1024 * 1024 * 1024 * 1024 * 1024 * 1024 * 1024
+      Byte.new @value * YOTTA
     end
 
     def to_k
-      Kilo.new @value * 1024 * 1024 * 1024 * 1024 * 1024 * 1024 * 1024
+      Kilo.new @value * (YOTTA / KILO)
     end
 
     def to_m
-      Mega.new @value * 1024 * 1024 * 1024 * 1024 * 1024 * 1024
+      Mega.new @value * (YOTTA / MEGA)
     end
 
     def to_g
-      Giga.new @value * 1024 * 1024 * 1024 * 1024 * 1024
+      Giga.new @value * (YOTTA / GIGA)
     end
 
     def to_t
-      Tera.new @value * 1024 * 1024 * 1024 * 1024
+      Tera.new @value * (YOTTA / TERA)
     end
 
     def to_p
-      Peta.new @value * 1024 * 1024 * 1024
+      Peta.new @value * (YOTTA / PETA)
     end
 
     def to_e
-      Exa.new @value * 1024 * 1024
+      Exa.new @value * (YOTTA / EXA)
     end
 
     def to_z
-      Zetta.new @value * 1024
+      Zetta.new @value * (YOTTA / ZETTA)
     end
 
     def to_y

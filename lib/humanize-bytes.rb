@@ -9,4 +9,5 @@ module Humanize
   autoload :Exa, 'humanize/exa'
   autoload :Zetta, 'humanize/zetta'
   autoload :Yotta, 'humanize/yotta'
+  autoload :HumanBytes, 'humanize/human_bytes'
 end
